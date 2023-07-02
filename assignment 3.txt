@@ -1,0 +1,124 @@
+1.Write a function calculate that takes three arugments from the user, say num1 , num2, and operation(1==add, 2==subtract, 
+3==multiply, 4==divide ).Don`t use switch statement or if else statements
+ 
+1.add,
+2.subtract,
+3.multiply,
+4.divide 
+
+write the calc function for all the operations
+
+>function calc(){    var add = function(num1,num2){
+        return num1+num2;
+    }
+    var subtract = function(num1,num2){
+        return num1-num2;
+    }
+  var multiply = function(num1,num2){
+        return num1*num2;
+    }
+    var divide = function(num1,num2){
+        return num1%num2;
+    }
+    return [add,subtract,multiply,divide]
+}
+var num1 = parseInt(prompt("1st value"));
+var num2 = parseInt(prompt("2nd value "));
+var num3 = parseInt(prompt("please select the operation: 1->Add : 2->subtract 3->multiply 4 ->divide"));
+calc()[num3](num1,num2);
+
+==================================================================================================================
+2.
+var a = parseInt(prompt("Enter the 1st side of traingle"));
+var b = parseInt(prompt("Enter the 2nd side of traingle"));
+var c = parseInt(prompt("Enter the 3rd side of traingle"));
+check(a,b,c,equilateral);
+
+function check(a,b,c,fn){
+    fn(a,b,c)
+}
+
+function equilateral(a,b,c){
+    if(a==b && b==c){
+        console.log("it is equilateral triangle")
+    }
+    else{
+        console.log ("it is not a equilateral triangle")
+    }
+    
+}
+
+3.Given two strings, return true if they are anagrams of one another
+
+For example: Mary is an anagram of Army
+
+>function anagram(str1,str2){
+    if(str1.length!=str2.length) return false;
+    for(var i=0;i<str1.length;i++){
+        if(str2.indexOf(str1.charAt(i))==-1) return false;
+    }
+    return true;
+}
+
+==========================================
+
+
+4. Create a function Employee, having id, name, basic_Salary as arguments.
+
+Compute HRA, DA, TA, GS, NS.
+
+HRA is 30% of Basic Salary.
+DA is 10% of Basic Salary.
+TA is 20% of Basic Salary.
+
+GS = Basic Salary + HRA + DA + TA;
+
+TAX DEDUCTION is 10% of GS.
+
+NS = GS - TAX DEDUCTION.
+
+NOte : Use Basic Salary in Lexical Scope 
+Print salary slip of the employee.
+
+function Employee(id,name,bs)
+{
+     function hra(){
+       return bs*0.3;
+     }
+    function da(){
+        return bs*0.1}
+    function ta() {
+        return bs*0.2;
+    }
+    function gs(){
+        return bs+hra()+da()+ta();}
+    function ns(){
+        return (gs()-(0.1*gs()));
+    }
+    // console.log(`The salary after calculation is`+ns());
+    console.log(`The hra is `hra());
+    console.log(da());
+    console.log(ta());
+    console.log(gs());
+    console.log(ns());
+    
+    }
+===================================================
+
+5. Write a function to find the maximum and minimum elements in an array.
+arr = [10,3,15,-1,9,6]
+
+output = maxno. : 15
+			minno. : -1
+
+>function MaxMin(a)
+{
+    
+    function compareElement(a,b){
+        return a-b;
+    }
+    a.sort(compareElement);
+    var max=a[a.length-1];
+    var min=a[0];
+    console.log(`Maximum Value in array is ${max} and Minimum value is${min}`)
+}
